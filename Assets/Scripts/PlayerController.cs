@@ -6,12 +6,16 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float rotationSpeed = 0f;
     [SerializeField] float movementSpeed = 0f;
+    [SerializeField] float rayLenght = 1f;
+    [SerializeField] Transform eyes;
+    public LayerMask layerToHitRaycast;
 
     // Update is called once per frame
     void Update()
     {
         Rotate(HorizontalController());
         Move(VerticalController());
+        Raycast();
     }
 
     //Player rotation with the specified direction and rotation speed.
@@ -36,5 +40,26 @@ public class PlayerController : MonoBehaviour
     float VerticalController()
     {
         return Input.GetAxis("Vertical");
+    }
+
+    private void Raycast()
+    {
+        Vector3 direction = eyes.forward;
+        Vector3 target = (eyes.position + (direction * rayLenght));
+        RaycastHit hit;
+
+        if(Physics.Raycast(eyes.position, direction, out hit, rayLenght, layerToHitRaycast))
+        {
+            Vector3 directionHitCollider = (hit.collider.transform.position - eyes.position).normalized;
+            Debug.DrawRay(eyes.position, directionHitCollider * rayLenght, Color.red);
+
+            string color = hit.rigidbody.name.Split(' ')[0];
+            GameManager.Instance.doorColor = color;
+            GameManager.Instance.OpenDoor();
+        }
+        else
+        {
+            Debug.DrawLine(eyes.position, target, Color.blue);
+        }
     }
 }
