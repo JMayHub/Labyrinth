@@ -6,7 +6,7 @@ When the player push the button, the false wall disappear and the enemy moves to
 
 - Mill Trap:
 This trap contains two mill with rotation and block the pass to push the green button.
-If the player tries to pass and touch the mills, he dies.
+If the player tries to pass and touch the mill, he dies.
 
 - Sphere Trap:
 This trap contanis a Sphere which falls when the blue button is pushed and smash the player.
