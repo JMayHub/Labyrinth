@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638425542705447827
+      ticks: 638425684477532106
     m_Hash: 1597732210
   m_LockFileStatus:
     m_FilePath: D:/Projects/UnityProjects/Labyrinth/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638425542707401521
+      ticks: 638425684477802101
     m_Hash: 1195943305
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

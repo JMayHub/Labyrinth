@@ -3320,7 +3320,7 @@ MonoBehaviour:
   eyes: {fileID: 1795452779}
   layerToHitRaycast:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 64
   isAlive: 1
 --- !u!114 &678866672
 MonoBehaviour:
