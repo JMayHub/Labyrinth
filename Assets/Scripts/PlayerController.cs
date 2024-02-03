@@ -78,14 +78,16 @@ public class PlayerController : MonoBehaviour
         if(Physics.Raycast(eyes.position, direction, out hit, rayLenght, layerToHitRaycast))
         {
             //Activate a trap to move a wall that hides an enemy to a random position and let the enemy pass to catch the player.
-            if(hit.rigidbody.name == "False Button")
+            if(hit.rigidbody.name == "FalseButton")
             {
-                GameObject objectWall = GameObject.Find("False Wall");
-                GameObject enemy = GameObject.Find("Enemy");
-                Vector3 initialWallPosition = objectWall.transform.position;
+                Debug.DrawLine(eyes.position, target, Color.red);
+                Debug.Log("THIS BUTTON DOESN'T WORK\nIT'S A TRAP!!!");
+                //GameObject objectWall = GameObject.Find("FalseWall");
+                //GameObject enemy = GameObject.Find("Enemy");
+                //Vector3 initialWallPosition = objectWall.transform.position;
 
-                objectWall.transform.position = new Vector3(initialWallPosition.x, -10, initialWallPosition.z);
-                enemy.GetComponent<EnemyTrap>().Activate();
+                //objectWall.transform.position = new Vector3(initialWallPosition.x, initialWallPosition.y-10, initialWallPosition.z);
+                //enemy.GetComponent<EnemyTrap>().Activate();
             }
 
             //Activate buttons to open doors by color. (Blue button for blue door, green button for green door, red button for red door)

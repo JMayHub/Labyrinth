@@ -12,7 +12,7 @@ public class EnemyTrap : MonoBehaviour
     //Get initial postions of the false wall that hides the enemy to reload his position later if an enemy touched the player.
     private void Start()
     {
-        objectWall = GameObject.Find("False Wall");
+        objectWall = GameObject.Find("FalseWall");
         initialWallPosition = objectWall.transform.position;
     }
 
@@ -21,6 +21,7 @@ public class EnemyTrap : MonoBehaviour
     {
         if (isActive)
         {
+            gameObject.GetComponent<Pathfinding>().getNavigator().isStopped = false;
             gameObject.GetComponent<CharacterController>().Move(transform.TransformDirection(new Vector3(-1, 0, 0) * movementSpeed * Time.deltaTime));
         }
     }
@@ -30,8 +31,8 @@ public class EnemyTrap : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            objectWall.transform.position = initialWallPosition;
-            isActive = false;
+            //objectWall.transform.position = initialWallPosition;
+            //isActive = false;
         }
     }
 
