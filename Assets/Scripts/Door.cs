@@ -14,6 +14,8 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void OnDestroy()
     {
+        
+        GameManager.Instance.UpdateScore(Score.OpenDoor);
         GameManager.Instance.OpenDoorEvent -= DestroyMe;
         Debug.Log("<b><color=" + GameManager.Instance.doorColor + ">" + GameManager.Instance.doorColor + " DOOR OPENED</color></b>");
     }

@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         initialPosition = gameObject.transform.position;
         initialRotation = gameObject.transform.rotation;
+
     }
 
     // Update is called once per frame

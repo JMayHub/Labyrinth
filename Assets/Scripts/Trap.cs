@@ -19,6 +19,7 @@ public class Trap : MonoBehaviour
         {
             Debug.Log("<b><color=purple>YOU ARE DEAD</color>\n<color=yellow>PRESS ENTER TO REVIVE</color></b>");
             other.gameObject.GetComponent<PlayerController>().isAlive = false;
+            GameManager.Instance.UpdateScore(Score.Death);
             gameObject.transform.position = initialPosition;
             GameObject.Find("Box").transform.position = Vector3.zero;
         }
@@ -31,6 +32,7 @@ public class Trap : MonoBehaviour
         {
             Debug.Log("<b><color=purple>YOU ARE DEAD</color>\n<color=yellow>PRESS ENTER TO REVIVE</color></b>");
             collision.gameObject.GetComponent<PlayerController>().isAlive = false;
+            GameManager.Instance.UpdateScore(Score.Death);
             gameObject.transform.position = initialPosition;
             GameObject.Find("Box").transform.position = Vector3.zero;
         }
