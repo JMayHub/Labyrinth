@@ -40,9 +40,12 @@ public class PlayerController : MonoBehaviour
         }
 
         //Comes back to the initial position and rotation.
+
+        //Also, his life becomes to the max value.
         else
         {
             Dead();
+
         }
 
         //Push key to revive
@@ -118,9 +121,14 @@ public class PlayerController : MonoBehaviour
     }
 
     //Reload the player to the initial position and rotation when he dies.
+
+    //Also, his life becomes to the max value.
     void Dead()
     {
         gameObject.GetComponent<CharacterController>().transform.position = initialPosition;
         gameObject.GetComponent<CharacterController>().transform.rotation = initialRotation;
+
+        GameManager.Instance.life = GameManager.Instance.initialLife;
+
     }
 }

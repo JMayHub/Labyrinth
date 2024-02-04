@@ -370,6 +370,7 @@
 "Assets/Scripts/Score.cs"
 "Assets/Scripts/SliderLife.cs"
 "Assets/Scripts/Trap.cs"
+"Assets/Scripts/Trap2.cs"
 -langversion:9.0
 
 /deterministic
