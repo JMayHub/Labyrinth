@@ -24,6 +24,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.Instance.life <= 0)
+        {
+
+            isAlive = false;
+
+        }
+
+
         if (isAlive)
         {
             Rotate(HorizontalController());

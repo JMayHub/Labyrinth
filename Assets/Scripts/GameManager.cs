@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     //ASL puntuación del jugador
     public float score = 0f;
     public TextMeshProUGUI scoreObject;
+
+    //DCC vida del jugador
+    public int life = 10;
     
     private void Awake()
     {
@@ -59,4 +62,17 @@ public class GameManager : MonoBehaviour
 
         scoreObject.SetText(score + "");
     }
+
+
+    //Player damage
+    public void DamagePlayer()
+    {
+
+
+        life = life - 1;
+
+
+    }
+
+
 }
