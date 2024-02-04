@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreObject;
 
     //DCC vida del jugador
-    public int life = 10;
+    public float life = 10f;
+    public float initialLife;
     
     private void Awake()
     {
@@ -29,6 +30,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        initialLife = life;
+
+
     }
 
     public void OpenDoor()
@@ -69,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
 
 
-        life = life - 1;
+        life = life - 0.25f * initialLife;
 
 
     }
